@@ -11,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import pl.za.xvacuum.qessentials.Main;
+import pl.za.xvacuum.qessentials.utils.ChatUtil;
 import pl.za.xvacuum.qessentials.utils.Util;
 
 public class PlayerChat implements Listener{
@@ -30,8 +31,14 @@ public class PlayerChat implements Listener{
 		e.setFormat(Util.setHEX(format));
  
 		/**
-		 * Tu w przyszlosci bêdzie slowmode i w³¹czanie/wy³¹czanie chatu
+		 * Tu w przyszlosci bêdzie slowmode 
 		 */
+		if(!e.getPlayer().hasPermission("qessentials.chat.bypass") || !e.getPlayer().isOp()){
+			if(ChatUtil.getChat() == false){
+				Util.sendMessage(e.getPlayer(), "&cChat jest obecnie wylaczony!");
+				return;
+			}
+		}
 		FileConfiguration cfg = Main.getInstance().getConfig();
 		if (!e.getPlayer().hasPermission("qessentials.chat.bypass") && (URL_PATTERN.matcher(e.getMessage()).find())) {
 			if(cfg.getBoolean("url-block") == true){
@@ -64,9 +71,9 @@ public class PlayerChat implements Listener{
 			}
 		}
 			
-		
+		e.setMessage(e.getMessage().replace("qEssentials", "&6&lqEssentials&7").replace("qessentials", "&6&lqEssentials&7").replace("qEssentialsa", "&6&lqEssentials&7").replace("qessentialsa", "&6&lqEssentials&7"));
 		if (e.getPlayer().hasPermission("qessentials.chat.color")){
-			e.setMessage(Util.setHEX(e.getMessage()));
+			e.setMessage(Util.setHEX(e.getMessage().replace("qEssentials", "&6&lqEssentials&7").replace("qessentials", "&6&lqEssentials&7").replace("qEssentialsa", "&6&lqEssentials&7").replace("qessentialsa", "&6&lqEssentials&7")));
 		}
 		
 	}

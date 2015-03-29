@@ -3,4 +3,4 @@ main: pl.za.xvacuum.qessentials.Main
 version: 0.1-DEV
 website: http://xvacuum.za.pl/qEssentials/
 authors: [xVacuum(Dev), Fajny67(Tester), xBananowiec(Tester)]
-depends: [Vault, PermissionsEx]
+depends: [Vault, PermissionsEx, WorldGuard]

@@ -7,8 +7,12 @@ import java.util.List;
 import net.milkbowl.vault.chat.Chat;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.SimplePluginManager;
@@ -18,22 +22,42 @@ import pl.za.xvacuum.qessentials.commands.AdminChat;
 import pl.za.xvacuum.qessentials.commands.Broadcast;
 import pl.za.xvacuum.qessentials.commands.ChangeLore;
 import pl.za.xvacuum.qessentials.commands.ChangeName;
+import pl.za.xvacuum.qessentials.commands.ChatManager;
 import pl.za.xvacuum.qessentials.commands.ClearInv;
 import pl.za.xvacuum.qessentials.commands.Enchant;
 import pl.za.xvacuum.qessentials.commands.Gamemode;
 import pl.za.xvacuum.qessentials.commands.Gc;
+import pl.za.xvacuum.qessentials.commands.Heal;
 import pl.za.xvacuum.qessentials.commands.Help;
 import pl.za.xvacuum.qessentials.commands.Helpop;
+import pl.za.xvacuum.qessentials.commands.Home;
 import pl.za.xvacuum.qessentials.commands.Info;
+import pl.za.xvacuum.qessentials.commands.Message;
 import pl.za.xvacuum.qessentials.commands.Motd;
+import pl.za.xvacuum.qessentials.commands.PlayerList;
 import pl.za.xvacuum.qessentials.commands.Reload;
+import pl.za.xvacuum.qessentials.commands.Reply;
+import pl.za.xvacuum.qessentials.commands.Sethome;
+import pl.za.xvacuum.qessentials.commands.Setspawn;
+import pl.za.xvacuum.qessentials.commands.Spawn;
+import pl.za.xvacuum.qessentials.commands.Teleport;
 import pl.za.xvacuum.qessentials.commands.Time;
+import pl.za.xvacuum.qessentials.commands.Tppos;
 import pl.za.xvacuum.qessentials.commands.Weather;
+//import pl.za.xvacuum.qessentials.commands.Whitelist;
+import pl.za.xvacuum.qessentials.commands.Whois;
 import pl.za.xvacuum.qessentials.listeners.Join;
 import pl.za.xvacuum.qessentials.listeners.Leave;
 import pl.za.xvacuum.qessentials.listeners.PlayerChat;
+//import pl.za.xvacuum.qessentials.listeners.PlayerLogin;
 import pl.za.xvacuum.qessentials.listeners.ServerList;
+import pl.za.xvacuum.qessentials.stonegenerator.StoneMain;
+import pl.za.xvacuum.qessentials.stonegenerator.listeners.Break;
+import pl.za.xvacuum.qessentials.stonegenerator.listeners.Place;
 import pl.za.xvacuum.qessentials.utils.LogUtil;
+import pl.za.xvacuum.qessentials.utils.TimeUtil;
+
+import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 
 public class Main extends JavaPlugin
 {
@@ -70,6 +94,19 @@ public class Main extends JavaPlugin
 		LogUtil.info("Zaladowano komendy!");
 		registerEvents();
 		LogUtil.info("Zaladowano wydarzenia!");
+		StoneMain.createRecipe();
+		LogUtil.info("Zaladowano stoniarki!");
+		
+		ItemStack ender = new ItemStack(Material.ENDER_CHEST, 1);
+	    ShapedRecipe enderchest = new ShapedRecipe(ender).shape(new String[] { 
+	      "OOO", 
+	      "OEO", 
+	      "OOO" })
+	      .setIngredient('O', Material.OBSIDIAN)
+	      .setIngredient('E', Material.ENDER_PEARL);
+	    Main.getInstance().getServer().addRecipe(enderchest); 
+	    
+		LogUtil.info("Zaladowano enderchesta!");
 		LogUtil.info("System zostal zaladowany!");
 	}
 	
@@ -105,8 +142,26 @@ public class Main extends JavaPlugin
 		registerCommand(new Broadcast());
 		registerCommand(new Time());
 		registerCommand(new Weather());
+		registerCommand(new Home());
+		registerCommand(new Sethome());
+		registerCommand(new Teleport());
+		registerCommand(new Whois());
+		registerCommand(new Heal());
+		registerCommand(new Tppos());
+		registerCommand(new Setspawn());
+		registerCommand(new Spawn());
+		registerCommand(new Message());
+		registerCommand(new Reply());
+		registerCommand(new PlayerList());
+		registerCommand(new ChatManager());
+		//registerCommand(new Whitelist());
 	}
 	
+	public static WorldGuardPlugin getWorldGuard()
+	{
+	    Plugin wg = Bukkit.getServer().getPluginManager().getPlugin("WorldGuard");
+	    return (WorldGuardPlugin)wg;
+	}
 	private void registerEvents()
 	{
 		PluginManager pm = Bukkit.getServer().getPluginManager();
@@ -114,6 +169,10 @@ public class Main extends JavaPlugin
 		pm.registerEvents(new ServerList(), this);
 		pm.registerEvents(new Join(), this);
 		pm.registerEvents(new Leave(), this);
+		pm.registerEvents(new TimeUtil(), this);
+		pm.registerEvents(new Break(), this);
+		pm.registerEvents(new Place(), this);
+		//pm.registerEvents(new PlayerLogin(), this);
 	}
 	
 	public static Chat getChat()

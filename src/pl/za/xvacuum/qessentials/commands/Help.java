@@ -27,11 +27,19 @@ public class Help extends newCommand{
 				if(args[0].equalsIgnoreCase("1"))
 				{
 					HelpUtil.sendHelp(1, p);
+					return;
 				}
 				if(args[0].equalsIgnoreCase("2"))
 				{
 					HelpUtil.sendHelp(2, p);
-				}else if ((!args[0].equalsIgnoreCase("1")) || (!args[0].equalsIgnoreCase("1")))
+					return;
+				}
+				if(args[0].equalsIgnoreCase("3"))
+				{
+					HelpUtil.sendHelp(3, p);
+					return;
+				}
+				else if ((!args[0].equalsIgnoreCase("1")) || (!args[0].equalsIgnoreCase("2") || (!args[0].equalsIgnoreCase("3"))))
 				{
 					Util.sendMessage(p, "&cNie znaleziono strony o numerze &7" + args[0].toString() + "&c!");
 					return;

@@ -5,6 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import pl.za.xvacuum.qessentials.Main;
+import pl.za.xvacuum.qessentials.utils.PlayerManager;
 import pl.za.xvacuum.qessentials.utils.Util;
 
 public class Join implements Listener {
@@ -18,6 +19,7 @@ public class Join implements Listener {
 		}else{
 			e.setJoinMessage(Util.setHEX(format.replace("{PLAYER}", e.getPlayer().getName())));
 		}
+		PlayerManager.addPlayer(e.getPlayer());
 	}
 
 }

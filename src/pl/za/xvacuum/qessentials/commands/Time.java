@@ -36,6 +36,9 @@ public class Time extends newCommand{
 				world.setTime(14500L);
 				Util.sendMessage(p, "&7Ustawiono czas swiata &c'"+p.getWorld().getName()+"' &7na &cnoc");
 				return;
+			}else{
+				Util.sendMessage(p, "&cPoprawne uzycie: /time <day/night>");
+				return;
 			}
 		}
 		

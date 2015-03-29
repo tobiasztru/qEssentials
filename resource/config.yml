@@ -22,6 +22,12 @@ server-slots: 120
 # [------------------------------]
 # Format chatu
 chat-format: '&8[{PREFIX}&8] &f{PLAYER}&8: &7{MESSAGE}'
+# Wiadomoœæ wy³¹czania chatu
+chat-off: '&7Chat zostal &cwylaczony&7!'
+# Wiadomoœæ w³¹czania chatu
+chat-on: '&7Chat zostal &cwlaczony&7!'
+# Wiadomoœæ czyszczenia chatu
+chat-clear: '&7Chat zostal &cwyczyszczony&7!'
 # Czy ma byæ w³¹czona blokada URL ( - BETA!)
 url-block: true
 # Czy ma byæ w³¹czona blokada IP ( - BETA!)
@@ -53,6 +59,31 @@ join-format: '&c{PLAYER} &7dolaczyl do gry!'
 # Format opuszczania serwera (zostaw '' jezeli chcesz wylaczyc)
 leave-format: '&c{PLAYER} &7opuscil gre!'
 
+# [------------------------------]
+# [         Teleportation
+# [------------------------------]
+# Okres oczekiwania na teleport (w sekundach)
+tp-delay: 10
 
+# [------------------------------]
+# [            Motd
+# [------------------------------]
+# Czy ma siê pokazywaæ motd
+motd-show: true
+# Treœæ motd
+motd:
+ - '&8&m-------------------------------------'
+ - '&7  Witaj &c{PLAYER}&7!'
+ - '&7    Serwer uzywa &cqEssentials &7by &cxVacuum'
+ - '&8&m-------------------------------------'
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 

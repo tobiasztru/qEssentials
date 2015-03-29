@@ -5,6 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import pl.za.xvacuum.qessentials.Main;
+import pl.za.xvacuum.qessentials.utils.PlayerManager;
 import pl.za.xvacuum.qessentials.utils.Util;
 
 public class Leave implements Listener {
@@ -18,6 +19,7 @@ public class Leave implements Listener {
 		}else{
 			e.setQuitMessage(Util.setHEX(format.replace("{PLAYER}", e.getPlayer().getName())));
 		}
+		PlayerManager.removePlayer(e.getPlayer());
 	}
 
 }
