@@ -1,0 +1,58 @@
+# [------------------------------]
+# [    qEssentials v0.1-DEV
+# [  Dziêki za u¿ywanie! :)
+# [  Wersja: PL / POLAND / POLSKA
+# [------------------------------]
+
+# [------------------------------]
+# [      Podstawowe rzeczy 
+# [------------------------------]
+# Czy ma byæ w³¹czone szczegó³owe debugowanie (szczegó³owe informacje wysy³ane do konsoli)
+debug: true
+# Czy opcje wymagaj¹ce pluginu BarAPI maj¹ byæ w³¹czone
+barapi: true
+# G³ówne serwerowe motd
+server-motd: '&7Plugin &cqEssentials &7by &cxVacuum&7!'
+# Sloty (tylko wyœwietlane, nie prawdziwe!)
+server-slots: 120
+  
+ 
+# [------------------------------]
+# [            Chat 
+# [------------------------------]
+# Format chatu
+chat-format: '&8[{PREFIX}&8] &f{PLAYER}&8: &7{MESSAGE}'
+# Czy ma byæ w³¹czona blokada URL ( - BETA!)
+url-block: true
+# Czy ma byæ w³¹czona blokada IP ( - BETA!)
+ip-block: true
+# Czy ma byæ w³¹czona blokada przekleñstw i nazw popularnych serwerów 
+words-block: true
+# Format chatu administratora
+adminchat-format: '&8[&4@&8] &7{PLAYER}: &c{MESSAGE}'
+
+# [------------------------------]
+# [           Helpop
+# [------------------------------]
+# Co ile sekund mo¿na wysy³aæ /helpop 
+helpop-delay: 30
+# Format helpopu
+helpop-format: '&8[&4Helpop&8] &7{PLAYER}: &c{MESSAGE}'
+
+# [------------------------------]
+# [           ChangeItem
+# [------------------------------]
+# Czym ma sie usuwac nazwe itemu lub opis
+changeitem-remove: '-remove'
+
+# [------------------------------]
+# [         Join/Leave
+# [------------------------------]
+# Format dolaczania na serwer (zostaw '' jezeli chcesz wylaczyc)
+join-format: '&c{PLAYER} &7dolaczyl do gry!'
+# Format opuszczania serwera (zostaw '' jezeli chcesz wylaczyc)
+leave-format: '&c{PLAYER} &7opuscil gre!'
+
+
+
+
