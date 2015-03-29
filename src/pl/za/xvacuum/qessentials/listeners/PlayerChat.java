@@ -35,6 +35,7 @@ public class PlayerChat implements Listener{
 		 */
 		if(!e.getPlayer().hasPermission("qessentials.chat.bypass") || !e.getPlayer().isOp()){
 			if(ChatUtil.getChat() == false){
+				e.setCancelled(true);
 				Util.sendMessage(e.getPlayer(), "&cChat jest obecnie wylaczony!");
 				return;
 			}
