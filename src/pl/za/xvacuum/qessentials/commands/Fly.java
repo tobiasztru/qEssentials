@@ -22,10 +22,12 @@ public class Fly extends QCommand{
 		if(args.length == 1)
 		{
 			if(args[0].equalsIgnoreCase("on")){
+				p.setAllowFlight(true);
 				p.setFlying(true);
 				Util.sendMessage(p, "&7Wlaczyles sobie latanie!");
 				return;
 			}else if (args[0].equalsIgnoreCase("off")){
+				p.setAllowFlight(false);
 				p.setFlying(false);
 				Util.sendMessage(p, "&7Wylaczyles sobie latanie!");
 				return;
@@ -37,16 +39,18 @@ public class Fly extends QCommand{
 				return;
 			}
 			if(args[0].equalsIgnoreCase("on")){
+				pl.setAllowFlight(true);
 				pl.setFlying(true);
 				Util.sendMessage(p, "&7Wlaczyles graczowi&c " + pl.getName() + "&7 latanie!");
 				return;
 			}else if (args[0].equalsIgnoreCase("off")){
+				pl.setAllowFlight(false);
 				pl.setFlying(false);
 				Util.sendMessage(p, "&7Wylaczyles graczowi&c " + pl.getName() + "&7 latanie!");
 				return;
 			}	
 		}else{
-			Util.sendMessage(p, "&cPoprawne uzycie: /fly <gracz>");
+			Util.sendMessage(p, "&cPoprawne uzycie: /fly <on/off> <gracz>");
 			return;
 		}
 		

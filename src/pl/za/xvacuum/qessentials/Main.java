@@ -85,10 +85,10 @@ public class Main extends JavaPlugin
 		saveDefaultConfig();
 		LogUtil.info("Zaladowano konfiguracje serwera!");
 	    setupChat();
-	    Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoMessage(), 0L, Main.getInstance().getConfig().getLong("am-delay") * 20);
-	    LogUtil.info("Wystartowano task: AutoMessage");
 		LogUtil.info("Znaleziono plugin: Vault");
 		LogUtil.info("Implementacja API zakonczona!");
+	    Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoMessage(), 0L, Main.getInstance().getConfig().getLong("am-delay") * 20);
+	    LogUtil.info("Wystartowano task: AutoMessage");
 		registerCommands();
 		LogUtil.info("Zaladowano komendy!");
 		registerEvents();

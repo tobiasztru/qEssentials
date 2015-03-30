@@ -37,9 +37,7 @@ public class Place implements Listener {
 	          Util.sendMessage(e.getPlayer(), "&cNie mozesz tu stawiac stoniarek!");
 	        }
 	      }
-	      else {
-	    	  Util.sendMessage(e.getPlayer(), "&cNad stoniarka jest juz jakis blok!");
-	      }
+	    
 	    }
 	  }
 

@@ -25,7 +25,7 @@ public class Invsee extends QCommand {
 		}else if (args.length == 1){
 			Player pl = Bukkit.getPlayerExact(args[0]);
 			if(!(pl == null)){
-				pl.openInventory(pl.getInventory());
+				p.openInventory(pl.getInventory());
 				return;
 			}else{
 				Util.sendMessage(p, "&cTen gracz nie jest online!");
