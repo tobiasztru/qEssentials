@@ -6,9 +6,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Setspawn extends newCommand{
+public class Setspawn extends QCommand{
 
 	public Setspawn() {
 		super("setspawn", "Ustawianie spawnu", "/setspawn", "setspawn", Arrays.asList(new String[] { "setspwn", "qsetspawn", "ss" }));

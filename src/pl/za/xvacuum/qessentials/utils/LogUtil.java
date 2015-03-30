@@ -15,12 +15,12 @@ public class LogUtil {
 	private static LogUtil instance;
 	
 	private static PrintStream l = System.out;
-	private static String getName = Main.getInstance().getDescription().getName();
-	private static String prefixInfo = "[" + getName + "] ";
-	private static String prefixWarn = "[" + getName + " / WARNING] ";
-	private static String prefixError = "[" + getName + " / ERROR] ";
-	private static String prefixCritical = "[" + getName + " / CRITICAL ERROR] ";
-	private static String prefixDebug = "[" + getName + " / DEBUG] ";
+	private static String name = Main.getInstance().getDescription().getName();
+	private static String prefixInfo = "[" + name + "] ";
+	private static String prefixWarn = "[" + name + " / WARNING] ";
+	private static String prefixError = "[" + name + " / ERROR] ";
+	private static String prefixCritical = "[" + name + " / CRITICAL ERROR] ";
+	private static String prefixDebug = "[" + name + " / DEBUG] ";
 	private static FileConfiguration cfg = Main.getInstance().getConfig();
 	
 	public static LogUtil getLogger(){

@@ -12,7 +12,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.SimplePluginManager;
@@ -25,6 +24,7 @@ import pl.za.xvacuum.qessentials.commands.ChangeName;
 import pl.za.xvacuum.qessentials.commands.ChatManager;
 import pl.za.xvacuum.qessentials.commands.ClearInv;
 import pl.za.xvacuum.qessentials.commands.Enchant;
+import pl.za.xvacuum.qessentials.commands.Fly;
 import pl.za.xvacuum.qessentials.commands.Gamemode;
 import pl.za.xvacuum.qessentials.commands.Gc;
 import pl.za.xvacuum.qessentials.commands.Heal;
@@ -32,6 +32,7 @@ import pl.za.xvacuum.qessentials.commands.Help;
 import pl.za.xvacuum.qessentials.commands.Helpop;
 import pl.za.xvacuum.qessentials.commands.Home;
 import pl.za.xvacuum.qessentials.commands.Info;
+import pl.za.xvacuum.qessentials.commands.Invsee;
 import pl.za.xvacuum.qessentials.commands.Message;
 import pl.za.xvacuum.qessentials.commands.Motd;
 import pl.za.xvacuum.qessentials.commands.PlayerList;
@@ -44,20 +45,18 @@ import pl.za.xvacuum.qessentials.commands.Teleport;
 import pl.za.xvacuum.qessentials.commands.Time;
 import pl.za.xvacuum.qessentials.commands.Tppos;
 import pl.za.xvacuum.qessentials.commands.Weather;
-//import pl.za.xvacuum.qessentials.commands.Whitelist;
 import pl.za.xvacuum.qessentials.commands.Whois;
 import pl.za.xvacuum.qessentials.listeners.Join;
 import pl.za.xvacuum.qessentials.listeners.Leave;
 import pl.za.xvacuum.qessentials.listeners.PlayerChat;
-//import pl.za.xvacuum.qessentials.listeners.PlayerLogin;
 import pl.za.xvacuum.qessentials.listeners.ServerList;
+import pl.za.xvacuum.qessentials.listeners.SignChange;
 import pl.za.xvacuum.qessentials.stonegenerator.StoneMain;
 import pl.za.xvacuum.qessentials.stonegenerator.listeners.Break;
 import pl.za.xvacuum.qessentials.stonegenerator.listeners.Place;
+import pl.za.xvacuum.qessentials.tasks.AutoMessage;
 import pl.za.xvacuum.qessentials.utils.LogUtil;
 import pl.za.xvacuum.qessentials.utils.TimeUtil;
-
-import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 
 public class Main extends JavaPlugin
 {
@@ -86,8 +85,8 @@ public class Main extends JavaPlugin
 		saveDefaultConfig();
 		LogUtil.info("Zaladowano konfiguracje serwera!");
 	    setupChat();
-		LogUtil.info("Znaleziono plugin: BarAPI");
-		LogUtil.info("Implementacja API zakonczona!");
+	    Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoMessage(), 0L, Main.getInstance().getConfig().getLong("am-delay") * 20);
+	    LogUtil.info("Wystartowano task: AutoMessage");
 		LogUtil.info("Znaleziono plugin: Vault");
 		LogUtil.info("Implementacja API zakonczona!");
 		registerCommands();
@@ -154,14 +153,10 @@ public class Main extends JavaPlugin
 		registerCommand(new Reply());
 		registerCommand(new PlayerList());
 		registerCommand(new ChatManager());
-		//registerCommand(new Whitelist());
+		registerCommand(new Fly());
+		registerCommand(new Invsee());
 	}
 	
-	public static WorldGuardPlugin getWorldGuard()
-	{
-	    Plugin wg = Bukkit.getServer().getPluginManager().getPlugin("WorldGuard");
-	    return (WorldGuardPlugin)wg;
-	}
 	private void registerEvents()
 	{
 		PluginManager pm = Bukkit.getServer().getPluginManager();
@@ -172,7 +167,7 @@ public class Main extends JavaPlugin
 		pm.registerEvents(new TimeUtil(), this);
 		pm.registerEvents(new Break(), this);
 		pm.registerEvents(new Place(), this);
-		//pm.registerEvents(new PlayerLogin(), this);
+		pm.registerEvents(new SignChange(), this);
 	}
 	
 	public static Chat getChat()

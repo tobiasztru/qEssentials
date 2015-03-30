@@ -7,9 +7,9 @@ import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.HelpUtil;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Help extends newCommand{
+public class Help extends QCommand{
 
 	public Help() {
 		super("help", "Pomoc", "/help", "help", Arrays.asList(new String[] { "qhelp", "qcommands", "commands", "pomoc", "qpomoc"}));

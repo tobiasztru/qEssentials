@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -13,8 +12,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.Util;
-
-import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 
 public class Break implements Listener {
 	
@@ -47,19 +44,13 @@ public class Break implements Listener {
 	      meta.setDisplayName("§7Stoniarka");
 	      drop.setItemMeta(meta);
 	      if (e.getBlock().getType() == Material.ENDER_STONE) {
-	        WorldGuardPlugin wg = Main.getWorldGuard();
-	        wg.getRegionManager((World)Bukkit.getWorlds().get(0));
-	        if (wg.canBuild(e.getPlayer(), e.getBlock())) {
 	          e.getBlock().setType(Material.AIR);
 	          e.getBlock().getWorld().dropItemNaturally(e.getBlock().getLocation(), drop);
 	          e.setCancelled(true);
 	          Util.sendMessage(e.getPlayer(), "&7Zniszczyles stoniarke!");
-	        } else {
-	          e.setCancelled(true);
-	          Util.sendMessage(e.getPlayer(), "&cNie mozesz tu niszczyc stoniarek!");
 	        }
 	      }
 	    }
 	  }
 
-}
+

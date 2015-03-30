@@ -11,9 +11,9 @@ import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.TPS;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Gc extends newCommand{
+public class Gc extends QCommand{
 
 	public Gc() {
 		super("gc", "Garbage collector", "/gc", "gc", Arrays.asList(new String[] { "qgc", "qsystem", "tps", "qtps", "qgarbagecollector", "garbagecollector" }));
@@ -21,7 +21,7 @@ public class Gc extends newCommand{
 
 	@Override
 	public void onExecute(CommandSender sender, String[] args) {
-		Player p = (Player)sender;
+	    Player p = (Player)sender;
 		Util.sendMessage(p, "&7Informacje na temat &cserwera&7:");
 		Util.sendMessage(p, "&7  TPS: &c" + TPS.getTPS());
 		Util.sendMessage(p, "&7  Ilosc pamieci: &c" + Runtime.getRuntime().maxMemory() / 1024L / 1024L + " MB");

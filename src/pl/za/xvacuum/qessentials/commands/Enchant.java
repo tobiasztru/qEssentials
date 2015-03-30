@@ -9,9 +9,9 @@ import org.bukkit.inventory.ItemStack;
 
 import pl.za.xvacuum.qessentials.utils.EnchantUtil;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Enchant extends newCommand{
+public class Enchant extends QCommand{
 
 	public Enchant() {
 		super("enchant", "Enchantowanie przedmiotow", "/enchant <enchant> <level>", "enchant", Arrays.asList(new String[] { }));

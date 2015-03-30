@@ -8,9 +8,9 @@ import org.bukkit.entity.Player;
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.LogUtil;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Reload extends newCommand{
+public class Reload extends QCommand{
 
 	public Reload() {
 		super("qreload", "Przeladowanie konfiguracji", "qreload", "reload", Arrays.asList(new String[] { "qrl", "qreloadconfig", "reloadconfig", "rlconfig", "rlcfg", "reloadcfg" }));

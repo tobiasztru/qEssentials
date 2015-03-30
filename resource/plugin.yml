@@ -1,6 +1,6 @@
 name: qEssentials
 main: pl.za.xvacuum.qessentials.Main
-version: 0.1-DEV
+version: 0.2-DEV
 website: http://xvacuum.za.pl/qEssentials/
 authors: [xVacuum(Dev), Fajny67(Tester), xBananowiec(Tester)]
-depends: [Vault, PermissionsEx, WorldGuard]
+depends: [Vault, PermissionsEx]

@@ -9,9 +9,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Weather extends newCommand{
+public class Weather extends QCommand{
 
 	public Weather() {
 		super("weather", "Manipulacja pogoda", "/weather <sun/thunder>", "weather", Arrays.asList(new String[] { "qweather", "qw", "pogoda", "qpogoda" }));
@@ -33,6 +33,9 @@ public class Weather extends newCommand{
 			}else if (args[0].equalsIgnoreCase("thunder")){
 				world.setStorm(true);
 				Util.sendMessage(p, "&7Ustawiono pogode swiata &c'"+p.getWorld().getName()+"' &7na &cdeszczowa");
+				return;
+			}else{
+				Util.sendMessage(p, "&cPoprawne uzycie: /time <day/night>");
 				return;
 			}
 		}

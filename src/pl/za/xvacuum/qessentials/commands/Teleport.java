@@ -7,9 +7,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Teleport extends newCommand{
+public class Teleport extends QCommand{
 
 	public Teleport() {
 		super("tp", "Teleportacja", "/tp <player/[all]> [<player>]", "teleport", Arrays.asList(new String[] { "qtp", "teleport", "qteleport", "teleportacja" }));

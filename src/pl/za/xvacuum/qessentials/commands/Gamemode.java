@@ -6,9 +6,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Gamemode extends newCommand{
+public class Gamemode extends QCommand{
 
 	public Gamemode() {
 		super("gm", "Zmiana trybu gry", "/gm <tryb>", "gamemode", Arrays.asList(new String[] { "gamemode", "qgm", "qgamemode" }));

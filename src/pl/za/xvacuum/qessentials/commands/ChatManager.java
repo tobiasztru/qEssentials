@@ -9,12 +9,12 @@ import org.bukkit.entity.Player;
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.ChatUtil;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class ChatManager extends newCommand{
+public class ChatManager extends QCommand{
 
 	public ChatManager() {
-		super("chat", "Manipulacja chatem", "/chat <on/off/clear>", "chat", Arrays.asList(new String[] { "czat", "qchat", "qczat", "qc"}));
+		super("chat", "Manipulacja chatem", "/chat <on/off/clear>", "chat", Arrays.asList(new String[] { "czat", "qchat", "qczat", "qc", "c"}));
 		
 	}
 

@@ -7,9 +7,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Broadcast extends newCommand{
+public class Broadcast extends QCommand{
 
 	public Broadcast() {
 		super("broadcast", "Wysy³a globaln¹ wiadomoœæ na chat", "/broadcast <tekst>", "broadcast", Arrays.asList(new String[] { "bd", "qbroadcast", "qbd", "ogloszenie", "qogloszenie" }));

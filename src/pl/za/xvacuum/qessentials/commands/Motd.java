@@ -7,9 +7,9 @@ import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Motd extends newCommand{
+public class Motd extends QCommand{
 
 	public Motd() {
 		super("motdset", "Zmiana motd", "/motdset <tekst>", "motd", Arrays.asList(new String[] { "ms", "qms", "qmotd", "qmotdset", "setmotd"}));

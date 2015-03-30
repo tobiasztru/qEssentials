@@ -3,7 +3,6 @@ package pl.za.xvacuum.qessentials.stonegenerator.listeners;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
@@ -11,7 +10,6 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.Util;
 
-import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 
 public class Place implements Listener {
 	
@@ -27,9 +25,6 @@ public class Place implements Listener {
 	      if (loc1.getBlock().getType() == Material.AIR) {
 	        e.getBlock().getLocation();
 	        e.getBlock().getWorld();
-	        WorldGuardPlugin wg = Main.getWorldGuard();
-	        wg.getRegionManager((World)Bukkit.getWorlds().get(0));
-	        if (wg.canBuild(e.getPlayer(), e.getBlock())) {
 	          Bukkit.getScheduler().runTaskLater(Main.getInstance(), new Runnable() {
 	            public void run() {
 	              loc1.getBlock().setType(Material.STONE);
@@ -48,4 +43,4 @@ public class Place implements Listener {
 	    }
 	  }
 
-}
+

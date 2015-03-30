@@ -10,9 +10,9 @@ import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Helpop extends newCommand{
+public class Helpop extends QCommand{
 
 	private Map<CommandSender, Long> time = new WeakHashMap<CommandSender, Long>();
 	

@@ -41,6 +41,7 @@ public class HelpUtil {
 			if(p.hasPermission("qessentials.reply")) Util.sendMessage(p, "&c  /reply <tekst> &8- &7Odpowiedz na wiadomosc");
 			if(p.hasPermission("qessentials.list")) Util.sendMessage(p, "&c  /list &8- &7Lista graczy");
 			if(p.hasPermission("qessentials.chat")) Util.sendMessage(p, "&c  /chat <off/on/clear>&8- &7Manipulacja czatem");
+			if(p.hasPermission("qessentials.fly")) Util.sendMessage(p, "&c  /fly <on/off> <gracz> &8- &7Wlaczanie/wylaczanie fly");
 			Util.sendMessage(p, "&7Strona &c3/3&7!");
 		}
 	}

@@ -9,9 +9,9 @@ import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class AdminChat extends newCommand{
+public class AdminChat extends QCommand{
 
 	public AdminChat() {
 		super("adminchat", "Chat administratorow", "/adminchat [tekst]", "adminchat", Arrays.asList(new String[] { "qadminchat", "qac", "ac", "adminc", "achat"}));

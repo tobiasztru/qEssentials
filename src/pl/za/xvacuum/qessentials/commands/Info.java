@@ -8,12 +8,12 @@ import org.bukkit.plugin.PluginDescriptionFile;
 
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Info extends newCommand{
+public class Info extends QCommand{
 
 	public Info() {
-		super("info", "Informacje na temat pluginu", "/info", "info", Arrays.asList(new String[] { "qinfo", "qversion", "version", "ver", "informacje", "wersja" }));
+		super("qinfo", "Informacje na temat pluginu", "/qinfo", "info", Arrays.asList(new String[] { "qinfo", "qversion", "qver", "informacje", "wersja" }));
 	}
  
 	private static PluginDescriptionFile desc = Main.getInstance().getDescription();
@@ -22,7 +22,7 @@ public class Info extends newCommand{
 		Player p = (Player)sender;
 		Util.sendMessage(p, "&7Informacje na temat &cqEssentials&7:");
 		Util.sendMessage(p, "&7  Wersja: &c" + desc.getVersion());
-		Util.sendMessage(p, "&7  Autorzy: &c" + desc.getAuthors().toString());
+		Util.sendMessage(p, "&7  Autorzy: &cxVacuum (dev), xBananowiec (tester), Fajny67 (tester)");
 		Util.sendMessage(p, "&7  Strona: &c" + desc.getWebsite());
 		Util.sendMessage(p, "&7Lubisz plugin? Daj znac na &chttp://mpcforum.pl&7!");
 	}

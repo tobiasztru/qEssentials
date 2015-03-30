@@ -10,9 +10,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Message extends newCommand{
+public class Message extends QCommand{
 
 	public Message() {
 		super("msg", "Komunikacja miedzy graczami", "/msg <player> <text>", "msg", Arrays.asList(new String[] { "qmsg", "message", "m", "qm", "tell", "t", "echo" }));

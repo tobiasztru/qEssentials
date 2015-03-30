@@ -3,7 +3,6 @@ package pl.za.xvacuum.qessentials.utils;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,13 +21,11 @@ public class TimeUtil implements Listener{
 		list.add(player);
 		Util.sendMessage(player, "&7Zaczekaj &c" + Main.getInstance().getConfig().getLong("tp-delay") + "&7 sekund!".replace("L", ""));
 		Main.getInstance().getServer().getScheduler().runTaskLater(Main.getInstance(), new Runnable() {
-		    @SuppressWarnings("deprecation")
-			public void run() {
+		    public void run() {
 		    	if(list.contains(player)){
 			       player.teleport(loc);
 			       list.remove(player);
 			       Util.sendMessage(player, "&7Zostales przeteleportowany!");
-			       player.playEffect(player.getLocation(), Effect.FLAME, 5);
 			       Main.getInstance().getServer().getScheduler().cancelAllTasks();
 		    	}
 		    }

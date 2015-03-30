@@ -11,9 +11,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Time extends newCommand{
+public class Time extends QCommand{
 
 	public Time() {
 		super("time", "Manipulacja czasem", "/time <day/night>", "time", Arrays.asList(new String[] { "qtime", "qt", "czas", "qczas" }));

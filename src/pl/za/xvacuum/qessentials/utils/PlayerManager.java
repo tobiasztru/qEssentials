@@ -22,12 +22,14 @@ public class PlayerManager {
 	public static void addPlayer(Player p){
 		onlinePlayers.add(p);
 		if(!p.hasPlayedBefore()){
-			Inventory pi = p.getInventory();
-			pi.addItem(new ItemStack(Material.STONE_PICKAXE, 1));
-			pi.addItem(new ItemStack(Material.COOKED_BEEF, 128));
-			pi.addItem(new ItemStack(Material.ENDER_CHEST, 1));
-			pi.addItem(new ItemStack(Material.TORCH, 16));
-			pi.addItem(new ItemStack(Material.BOAT, 2));
+			if(Main.getInstance().getConfig().getBoolean("start-items") == true){
+				Inventory pi = p.getInventory();
+				pi.addItem(new ItemStack(Material.STONE_PICKAXE, 1));
+				pi.addItem(new ItemStack(Material.COOKED_BEEF, 128));
+				pi.addItem(new ItemStack(Material.ENDER_CHEST, 1));
+				pi.addItem(new ItemStack(Material.TORCH, 16));
+				pi.addItem(new ItemStack(Material.BOAT, 2));
+			}
 			Bukkit.broadcastMessage(Util.setHEX("&7Witamy gracza &c" + p.getName() + " &7po raz pierwszy na serwerze!"));
 		}
 		if(Main.getInstance().getConfig().getBoolean("motd-show") == true){

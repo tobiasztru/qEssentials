@@ -8,9 +8,9 @@ import org.bukkit.entity.Player;
 import pl.za.xvacuum.qessentials.utils.HomeUtil;
 import pl.za.xvacuum.qessentials.utils.TimeUtil;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Home extends newCommand{
+public class Home extends QCommand{
 
 	public Home() {
 		super("home", "Teleportuje do domu", "/home", "home", Arrays.asList(new String[] { "qhome", "h", "dom", "qdom", "qd", "qh" }));

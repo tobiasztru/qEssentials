@@ -6,9 +6,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.TimeUtil;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Spawn extends newCommand{
+public class Spawn extends QCommand{
 
 	public Spawn() {
 		super("spawn", "Teleportacja na spawn", "/spawn [player]", "spawn", Arrays.asList(new String[] { "spwn", "qspawn" }));

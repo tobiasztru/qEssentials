@@ -13,7 +13,7 @@ debug: true
 barapi: true
 # G³ówne serwerowe motd
 server-motd: '&7Plugin &cqEssentials &7by &cxVacuum&7!'
-# Sloty (tylko wyœwietlane, nie prawdziwe!)
+# Sloty (tylko wyœwietlane, nie prawdziwe!) Wpisz 0 aby wy³¹czyæ funkcjê.
 server-slots: 120
   
  
@@ -66,7 +66,7 @@ leave-format: '&c{PLAYER} &7opuscil gre!'
 tp-delay: 10
 
 # [------------------------------]
-# [            Motd
+# [       Startowe rzeczy
 # [------------------------------]
 # Czy ma siê pokazywaæ motd
 motd-show: true
@@ -76,9 +76,26 @@ motd:
  - '&7  Witaj &c{PLAYER}&7!'
  - '&7    Serwer uzywa &cqEssentials &7by &cxVacuum'
  - '&8&m-------------------------------------'
+# Czy ma dawaæ startowe przedmioty (póki co brak mo¿liwoœci zmiany itemów)
+start-items: true
   
-  
-  
+# [------------------------------]
+# [            AutoMessage
+# [------------------------------]
+# Co ile ma byc wysylane automessage (w sekundach!)
+am-delay: 60
+# Automessage (tymczasowe) - zostaw puste je¿eli chcesz wy³¹czyæ
+automessage:
+  1: '&8[&cqEssentials&8] &7Dziekuje za uzywanie pluginu! :D'
+  2: '&8[&cqEssentials&8] &7Wbijaj na &cMPC &7i ocen plugin!'
+  3: '&8[&cqEssentials&8] &7Masz propozycje? Wbijaj na &cgithub/xVacuum/qEssentials&7!'
+  4: ''
+  5: ''
+  6: ''
+  7: ''
+  8: ''
+  9: ''
+  10: ''
   
   
   

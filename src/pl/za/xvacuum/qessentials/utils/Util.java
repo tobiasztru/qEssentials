@@ -1,9 +1,10 @@
 package pl.za.xvacuum.qessentials.utils;
 
+import java.util.Random;
 import java.util.regex.Pattern;
 
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
+import org.bukkit.command.CommandSender;
 
 public class Util {
 	
@@ -16,21 +17,26 @@ public class Util {
 		return ChatColor.translateAlternateColorCodes('&', text);
 	}
 	
-	public static boolean sendMessage(Player player, String text)
+	public static boolean sendMessage(CommandSender player, String text)
 	{
-		if(player instanceof Player){
-		   if ((text != null) || (text != ""))
-		   {
-		      player.sendMessage(setHEX(text));
-		   }
-		}else{
-			LogUtil.info("Konsola nie moze wykonywac komend!");
+		if ((text != null) || (text != ""))
+		{
+		    player.sendMessage(setHEX(text));
 		}
+		
 	   return true;
 	}
 	public static boolean isInteger(String string) {
 	    return Pattern.matches("-?[0-9]+", string.subSequence(0, string.length()));
 	}		
+	
+	public static int getRandomInt(int min, int max) {
+        Random rand = new Random();
+        int randomNumber = rand.nextInt((max + 1) - min) + min;
+
+        return randomNumber;
+
+    }
 
 	
 

@@ -7,9 +7,9 @@ import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.HomeUtil;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Sethome extends newCommand{
+public class Sethome extends QCommand{
 
 	public Sethome() {
 		super("sethome", "Ustawia dom", "/sethome", "sethome", Arrays.asList(new String[] { "qsethome", "sh", "ustawdom", "qustawdom", "qud", "qsh" }));

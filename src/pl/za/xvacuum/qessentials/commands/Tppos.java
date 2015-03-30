@@ -9,9 +9,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Tppos extends newCommand{
+public class Tppos extends QCommand{
 
 	public Tppos() {
 		super("tppos", "Teleportacja w okreslone koordynaty", "/tppos [player] <x> <y> <z>", "tppos", Arrays.asList(new String[] { "qtppos", "tpp", "qtpp", "tpposition" }));

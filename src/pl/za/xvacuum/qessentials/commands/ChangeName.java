@@ -13,9 +13,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class ChangeName extends newCommand{
+public class ChangeName extends QCommand{
 
 	public ChangeName() {
 		super("changename", "Zmiana nazwy przedmiotu", "/changename <tekst>", "changename", Arrays.asList(new String[] { "qchangename", "qcn", "cn", "setname", "sn", "qsetname", "qsn"}));

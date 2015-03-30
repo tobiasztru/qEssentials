@@ -9,9 +9,9 @@ import org.bukkit.entity.Player;
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.PlayerManager;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class PlayerList extends newCommand{
+public class PlayerList extends QCommand{
 
 	public PlayerList() {
 		super("list", "Lista graczy", "/list", "list", Arrays.asList(new String[] { "online", "who", "qlist", "qwho", "qonline" }));

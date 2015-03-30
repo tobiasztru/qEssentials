@@ -7,9 +7,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class Whois extends newCommand{
+public class Whois extends QCommand{
 
 	public Whois() {
 		super("whois", "Informacje o u¿ytkowniku", "/whois [player]", "whois", Arrays.asList(new String[] { "qwhois", "pinfo", "playerinfo" }));

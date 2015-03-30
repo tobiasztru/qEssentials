@@ -11,9 +11,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import pl.za.xvacuum.qessentials.Main;
 import pl.za.xvacuum.qessentials.utils.Util;
-import pl.za.xvacuum.qessentials.utils.newCommand;
+import pl.za.xvacuum.qessentials.utils.QCommand;
 
-public class ChangeLore extends newCommand{
+public class ChangeLore extends QCommand{
 
 	public ChangeLore() {
 		super("changelore", "Zmienia opis przedmiotu", "/changelore <lore>", "changelore", Arrays.asList(new String[] { "qchangelore", "qcl", "cl", "setlore", "sl", "qsetlore", "qsl"}));
