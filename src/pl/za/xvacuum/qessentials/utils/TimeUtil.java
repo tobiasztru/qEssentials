@@ -18,6 +18,11 @@ public class TimeUtil implements Listener{
 	
 	public static void teleportDelay(final Player player, final Location loc)
 	{
+		if(player.hasPermission("qessentials.teleport.bypass")){
+			player.teleport(loc);
+			Util.sendMessage(player, "&7Zostales przeteleportowany!");
+			return;
+		}
 		list.add(player);
 		Util.sendMessage(player, "&7Zaczekaj &c" + Main.getInstance().getConfig().getLong("tp-delay") + "&7 sekund!".replace("L", ""));
 		Main.getInstance().getServer().getScheduler().runTaskLater(Main.getInstance(), new Runnable() {

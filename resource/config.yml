@@ -15,6 +15,22 @@ barapi: true
 server-motd: '&7Plugin &cqEssentials &7by &cxVacuum&7!'
 # Sloty (tylko wyœwietlane, nie prawdziwe!) Wpisz 0 aby wy³¹czyæ funkcjê.
 server-slots: 120
+
+# [------------------------------]
+# [      Unknown command
+# [------------------------------]
+# Tryb nie znalezionej komendy (1 linijka = true / wiecej linijek = false)
+# UWAGA: Tutaj wymagany jest reload/restart serwera! (nie /qreload!)
+uc-oneline: false
+# Wiadomoœæ jednej linii
+uc-oneline-msg: '&7Nie znaleziono takiej komendy! Wpisz &c/help &7aby zobaczyc liste dostepnych komend!'
+
+# Wiadomoœæ wielu linii
+uc-multiline-msg:
+  - '&8&m-------------------------------------'
+  - '    &7Nie znaleziono takiej komendy!'
+  - '  &7Wpisz &c/help &7aby zobaczyc pomoc!'
+  - '&8&m-------------------------------------'
   
  
 # [------------------------------]
@@ -62,6 +78,8 @@ leave-format: '&c{PLAYER} &7opuscil gre!'
 # [------------------------------]
 # [         Teleportation
 # [------------------------------]
+# Swiat w którym znajduje siê spawn
+spawn-world: 'world'
 # Okres oczekiwania na teleport (w sekundach)
 tp-delay: 10
 
@@ -85,17 +103,29 @@ start-items: true
 # Co ile ma byc wysylane automessage (w sekundach!)
 am-delay: 60
 # Automessage (tymczasowe) - zostaw puste je¿eli chcesz wy³¹czyæ
-automessage:
-  1: '&8[&cqEssentials&8] &7Dziekuje za uzywanie pluginu! :D'
-  2: '&8[&cqEssentials&8] &7Wbijaj na &cMPC &7i ocen plugin!'
-  3: '&8[&cqEssentials&8] &7Masz propozycje? Wbijaj na &cgithub/xVacuum/qEssentials&7!'
-  4: ''
-  5: ''
-  6: ''
-  7: ''
-  8: ''
-  9: ''
-  10: ''
+automessages:
+  - '&8[&cqEssentials&8] &7Dziekuje za uzywanie pluginu! :D'
+  - '&8[&cqEssentials&8] &7Wbijaj na &cMPC &7i ocen plugin!'
+  - '&8[&cqEssentials&8] &7Masz propozycje? Wbijaj na &cgithub/xVacuum/qEssentials&7!'
+  
+  
+# [------------------------------]
+# [          ClearItems
+# [------------------------------]
+# Swiat który ma byæ wyczyszczony
+clear-world: 'world'
+
+# Pierwsza wiadomoœæ ostrzegaj¹ca przed czyszczeniem
+clear-first: '&8[&cqEssentials | Clear&8] &7Za dokladnie &c{TIME} &7sekund odbedzie sie czyszczenie globalne!'
+
+# Druga wiadomoœæ, ju¿ po wyczyszczeniu
+clear-cleared: '&8[&cqEssentials | Clear&8] &7Wyczyszczono wszystkie przedmioty lezace na ziemi!'
+
+# Ile sekund po ostrze¿eniu ma byæ czyszczony serwer
+clear-delay-1: 30
+
+# Co ile sekund ma byæ wykonywane czyszczenie itemów
+clear-delay-2: 700
   
   
   

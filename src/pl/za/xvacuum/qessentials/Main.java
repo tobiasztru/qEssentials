@@ -46,15 +46,18 @@ import pl.za.xvacuum.qessentials.commands.Time;
 import pl.za.xvacuum.qessentials.commands.Tppos;
 import pl.za.xvacuum.qessentials.commands.Weather;
 import pl.za.xvacuum.qessentials.commands.Whois;
+import pl.za.xvacuum.qessentials.commands.World;
 import pl.za.xvacuum.qessentials.listeners.Join;
 import pl.za.xvacuum.qessentials.listeners.Leave;
 import pl.za.xvacuum.qessentials.listeners.PlayerChat;
 import pl.za.xvacuum.qessentials.listeners.ServerList;
 import pl.za.xvacuum.qessentials.listeners.SignChange;
+import pl.za.xvacuum.qessentials.listeners.UnknownCommand;
 import pl.za.xvacuum.qessentials.stonegenerator.StoneMain;
 import pl.za.xvacuum.qessentials.stonegenerator.listeners.Break;
 import pl.za.xvacuum.qessentials.stonegenerator.listeners.Place;
 import pl.za.xvacuum.qessentials.tasks.AutoMessage;
+import pl.za.xvacuum.qessentials.tasks.ClearItems;
 import pl.za.xvacuum.qessentials.utils.LogUtil;
 import pl.za.xvacuum.qessentials.utils.TimeUtil;
 
@@ -89,6 +92,8 @@ public class Main extends JavaPlugin
 		LogUtil.info("Implementacja API zakonczona!");
 	    Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoMessage(), 0L, Main.getInstance().getConfig().getLong("am-delay") * 20);
 	    LogUtil.info("Wystartowano task: AutoMessage");
+	    Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new ClearItems(), 0L, Main.getInstance().getConfig().getLong("clear-delay-2") * 20);
+	    LogUtil.info("Wystartowano task: ClearItems");
 		registerCommands();
 		LogUtil.info("Zaladowano komendy!");
 		registerEvents();
@@ -155,6 +160,7 @@ public class Main extends JavaPlugin
 		registerCommand(new ChatManager());
 		registerCommand(new Fly());
 		registerCommand(new Invsee());
+		registerCommand(new World());
 	}
 	
 	private void registerEvents()
@@ -168,6 +174,7 @@ public class Main extends JavaPlugin
 		pm.registerEvents(new Break(), this);
 		pm.registerEvents(new Place(), this);
 		pm.registerEvents(new SignChange(), this);
+		pm.registerEvents(new UnknownCommand(), this);
 	}
 	
 	public static Chat getChat()

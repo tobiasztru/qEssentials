@@ -35,7 +35,7 @@ public class Weather extends QCommand{
 				Util.sendMessage(p, "&7Ustawiono pogode swiata &c'"+p.getWorld().getName()+"' &7na &cdeszczowa");
 				return;
 			}else{
-				Util.sendMessage(p, "&cPoprawne uzycie: /time <day/night>");
+				Util.sendMessage(p, "&cPoprawne uzycie: /weather <sun/thunder>");
 				return;
 			}
 		}

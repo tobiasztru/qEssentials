@@ -1,4 +1,4 @@
-package pl.za.xvacuum.qessentials.commands;
+ package pl.za.xvacuum.qessentials.commands;
 
 import java.util.Arrays;
 import java.util.List;
