@@ -37,6 +37,17 @@ public class Util {
         return randomNumber;
 
     }
+	public static Integer parseInteger(String integer){
+		try{
+			return Integer.valueOf(Integer.parseInt(integer));
+		}catch(NumberFormatException o)
+		{
+			o.printStackTrace();
+			LogUtil.error("Wystapil blad z parsowaniem numeru!");
+		}
+		return null;
+		
+	}
 
 	
 

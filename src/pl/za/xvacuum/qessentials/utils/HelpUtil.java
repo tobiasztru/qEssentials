@@ -19,7 +19,7 @@ public class HelpUtil {
 			if(p.hasPermission("qessentials.changename")) Util.sendMessage(p, "&c  /changename <tekst["+Main.getInstance().getConfig().getString("changeitem-remove")+"]> &8- &7Zmiana nazwy przedmiotu");
 			if(p.hasPermission("qessentials.changelore")) Util.sendMessage(p, "&c  /changelore <tekst["+Main.getInstance().getConfig().getString("changeitem-remove")+"]> &8- &7Zmiana opisu przedmiotu");
 			if(p.hasPermission("qessentials.adminchat")) Util.sendMessage(p, "&c  /adminchat &8- &7Chat administratorow");
-			Util.sendMessage(p, "&7Strona &c1/3&7!");
+			Util.sendMessage(p, "&7Strona &c1/4&7!");
 		}else if(page == 2){
 			Util.sendMessage(p, "&7Twoje dostepne &ckomendy&7:");
 			if(p.hasPermission("qessentials.gamemode")) Util.sendMessage(p, "&c  /gm <tryb> &8- &7Zmiana trybu gry"); 
@@ -32,7 +32,7 @@ public class HelpUtil {
 			if(p.hasPermission("qessentials.whois")) Util.sendMessage(p, "&c  /whois [gracz] &8- &7Informacje na temat gracza"); 
 			if(p.hasPermission("qessentials.heal")) Util.sendMessage(p, "&c  /heal [gracz] &8- &7Ulecza gracza");
 			if(p.hasPermission("qessentials.tppos")) Util.sendMessage(p, "&c  /tppos [gracz] <x> <y> <z> &8- &7Teleportacja w okreslone koordynaty"); 
-			Util.sendMessage(p, "&7Strona &c2/3&7!");
+			Util.sendMessage(p, "&7Strona &c2/4&7!");
 		}else if (page == 3){
 			Util.sendMessage(p, "&7Twoje dostepne &ckomendy&7:");
 			if(p.hasPermission("qessentials.setspawn")) Util.sendMessage(p, "&c  /setspawn &8- &7Ustawia globalny spawn");
@@ -42,8 +42,16 @@ public class HelpUtil {
 			if(p.hasPermission("qessentials.list")) Util.sendMessage(p, "&c  /list &8- &7Lista graczy");
 			if(p.hasPermission("qessentials.chat")) Util.sendMessage(p, "&c  /chat <off/on/clear>&8- &7Manipulacja czatem");
 			if(p.hasPermission("qessentials.fly")) Util.sendMessage(p, "&c  /fly <on/off> <gracz> &8- &7Wlaczanie/wylaczanie fly");
+			if(p.hasPermission("qessentials.world")) Util.sendMessage(p, "&c  /world <swiat> &8- &7Teleportacja na rozne swiaty");
+			if(p.hasPermission("qessentials.invsee")) Util.sendMessage(p, "&c  /invsee <gracz> &8- &7Otwiera ekwipunek gracza");
+			if(p.hasPermission("qessentials.back")) Util.sendMessage(p, "&c  /back &8- &7Teleportacja w ostatnie miejsce");
 			Util.sendMessage(p, "&7Strona &c3/3&7!");
+		}else if (page == 4){
+			Util.sendMessage(p, "&7Twoje dostepne &ckomendy&7:");
+			if(p.hasPermission("qessentials.head")) Util.sendMessage(p, "&c  /head <gracz> &8- &7Daje glowe gracza");
+			Util.sendMessage(p, "&7Strona &c4/4&7!");
 		}
+
 	}
 
 }

@@ -21,7 +21,7 @@ public class Gc extends QCommand{
 
 	@Override
 	public void onExecute(CommandSender sender, String[] args) {
-	    Player p = (Player)sender;
+		Player p = (Player)sender;
 		Util.sendMessage(p, "&7Informacje na temat &cserwera&7:");
 		Util.sendMessage(p, "&7  TPS: &c" + TPS.getTPS());
 		Util.sendMessage(p, "&7  Ilosc pamieci: &c" + Runtime.getRuntime().maxMemory() / 1024L / 1024L + " MB");

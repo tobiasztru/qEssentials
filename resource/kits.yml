@@ -1,0 +1,23 @@
+# ---------------------------------------
+# Jak dzia³aj¹ kity?
+# - S¹ to zestawy, które mo¿esz dowolnie zmieniaæ i tworzyæ nowe.
+# - Uprawnienie do nich jest bardzo proste - qessentials.kit.<nazwa>
+# Milej zabawy! :D
+# ---------------------------------------
+# WYJASNIENIA:
+# - delay: czas podany w sekundach, kiedy mo¿esz takowy zestaw wzi¹œæ. Ustaw 0 aby wy³¹czyæ.
+# - items: Lista przedmiotów, format: ITEM@DATA-ILOSC np. GOLDEN_APPLE@1-64
+# ---------------------------------------
+kits:
+  start:
+    delay: 120
+    items:
+      - GOLDEN_APPLE@1-1
+      - STONE@0-32
+      - PORK@0-64
+      - ENDER_CHEST@0-1
+  vip:
+    delay: 0 
+    items:
+      - APPLE@0-10
+    

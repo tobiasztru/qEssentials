@@ -19,6 +19,7 @@ public class TimeUtil implements Listener{
 	public static void teleportDelay(final Player player, final Location loc)
 	{
 		if(player.hasPermission("qessentials.teleport.bypass")){
+			BackUtil.setLastLocation(player, player.getLocation());
 			player.teleport(loc);
 			Util.sendMessage(player, "&7Zostales przeteleportowany!");
 			return;
@@ -28,6 +29,7 @@ public class TimeUtil implements Listener{
 		Main.getInstance().getServer().getScheduler().runTaskLater(Main.getInstance(), new Runnable() {
 		    public void run() {
 		    	if(list.contains(player)){
+		    	   BackUtil.setLastLocation(player, player.getLocation());
 			       player.teleport(loc);
 			       list.remove(player);
 			       Util.sendMessage(player, "&7Zostales przeteleportowany!");

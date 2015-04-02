@@ -39,6 +39,11 @@ public class Help extends QCommand{
 					HelpUtil.sendHelp(3, p);
 					return;
 				}
+				if(args[0].equalsIgnoreCase("4"))
+				{
+					HelpUtil.sendHelp(4, p);
+					return;
+				}
 				else if ((!args[0].equalsIgnoreCase("1")) || (!args[0].equalsIgnoreCase("2") || (!args[0].equalsIgnoreCase("3"))))
 				{
 					Util.sendMessage(p, "&cNie znaleziono strony o numerze &7" + args[0].toString() + "&c!");

@@ -3,9 +3,9 @@ package pl.za.xvacuum.qessentials.utils;
 
 import java.util.List;
 
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public abstract class QCommand extends Command{
 	
@@ -20,8 +20,12 @@ public abstract class QCommand extends Command{
 	  public final boolean execute(CommandSender sender, String s, String[] args)
 	  {
 	    if (!sender.hasPermission(this.uprawnienie)) {
-	      sender.sendMessage(ChatColor.RED + "Brak uprawnien do wykonania tej czynnosci! " + ChatColor.GRAY + "("+this.uprawnienie+")");
+	      Util.sendMessage(sender, "&cBrak uprawnien do wykonania tej czynnosci! &7("+this.uprawnienie+")");
 	      return true;
+	    }
+	    if(!(sender instanceof Player)){
+	    	Util.sendMessage(sender, "&cKonsola nie moze uzywac tych komend!");
+	    	return true;
 	    }
 	    try {
 	        onExecute(sender, args);

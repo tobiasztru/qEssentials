@@ -19,7 +19,7 @@ public class UnknownCommand implements Listener{
 	@EventHandler(priority=EventPriority.HIGHEST)
 	public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
 		Player p = event.getPlayer();
-		if ((!event.isCancelled()) && (p.hasPermission("CUC.message"))) {
+		if ((!event.isCancelled())) {
 			String command = event.getMessage().split(" ")[0];
 			HelpTopic htopic = Bukkit.getServer().getHelpMap().getHelpTopic(command);
 			if (htopic == null) {

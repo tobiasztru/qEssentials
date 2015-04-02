@@ -18,6 +18,7 @@ import org.bukkit.plugin.SimplePluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import pl.za.xvacuum.qessentials.commands.AdminChat;
+import pl.za.xvacuum.qessentials.commands.Back;
 import pl.za.xvacuum.qessentials.commands.Broadcast;
 import pl.za.xvacuum.qessentials.commands.ChangeLore;
 import pl.za.xvacuum.qessentials.commands.ChangeName;
@@ -27,6 +28,7 @@ import pl.za.xvacuum.qessentials.commands.Enchant;
 import pl.za.xvacuum.qessentials.commands.Fly;
 import pl.za.xvacuum.qessentials.commands.Gamemode;
 import pl.za.xvacuum.qessentials.commands.Gc;
+import pl.za.xvacuum.qessentials.commands.Head;
 import pl.za.xvacuum.qessentials.commands.Heal;
 import pl.za.xvacuum.qessentials.commands.Help;
 import pl.za.xvacuum.qessentials.commands.Helpop;
@@ -48,6 +50,7 @@ import pl.za.xvacuum.qessentials.commands.Weather;
 import pl.za.xvacuum.qessentials.commands.Whois;
 import pl.za.xvacuum.qessentials.commands.World;
 import pl.za.xvacuum.qessentials.listeners.Join;
+import pl.za.xvacuum.qessentials.listeners.KickPlayer;
 import pl.za.xvacuum.qessentials.listeners.Leave;
 import pl.za.xvacuum.qessentials.listeners.PlayerChat;
 import pl.za.xvacuum.qessentials.listeners.ServerList;
@@ -161,6 +164,8 @@ public class Main extends JavaPlugin
 		registerCommand(new Fly());
 		registerCommand(new Invsee());
 		registerCommand(new World());
+		registerCommand(new Back());
+		registerCommand(new Head());
 	}
 	
 	private void registerEvents()
@@ -175,6 +180,7 @@ public class Main extends JavaPlugin
 		pm.registerEvents(new Place(), this);
 		pm.registerEvents(new SignChange(), this);
 		pm.registerEvents(new UnknownCommand(), this);
+		pm.registerEvents(new KickPlayer(), this);
 	}
 	
 	public static Chat getChat()

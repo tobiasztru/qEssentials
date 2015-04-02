@@ -22,7 +22,7 @@ public class Info extends QCommand{
 		Player p = (Player)sender;
 		Util.sendMessage(p, "&7Informacje na temat &cqEssentials&7:");
 		Util.sendMessage(p, "&7  Wersja: &c" + desc.getVersion());
-		Util.sendMessage(p, "&7  Autorzy: &cxVacuum (dev), xBananowiec (tester), Fajny67 (tester)");
+		Util.sendMessage(p, "&7  Autorzy: &cxVacuum (dev), xSmokBezioxKox (tester)");
 		Util.sendMessage(p, "&7  Strona: &c" + desc.getWebsite());
 		Util.sendMessage(p, "&7Lubisz plugin? Daj znac na &chttp://mpcforum.pl&7!");
 	}
