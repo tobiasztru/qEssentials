@@ -19,14 +19,10 @@ server-slots: 120
 # [------------------------------]
 # [      Unknown command
 # [------------------------------]
-# Tryb nie znalezionej komendy (1 linijka = true / wiecej linijek = false)
-# UWAGA: Tutaj wymagany jest reload/restart serwera! (nie /qreload!)
-uc-oneline: false
-# Wiadomoœæ jednej linii
-uc-oneline-msg: '&7Nie znaleziono takiej komendy! Wpisz &c/help &7aby zobaczyc liste dostepnych komend!'
+# Czy nieznana komenda w ogóle ma byæ w³¹czona
+uc-enabled: true
 
-# Wiadomoœæ wielu linii
-uc-multiline-msg:
+uc-msg:
   - '&8&m-------------------------------------'
   - '    &7Nie znaleziono takiej komendy!'
   - '  &7Wpisz &c/help &7aby zobaczyc pomoc!'
@@ -52,6 +48,8 @@ ip-block: true
 words-block: true
 # Format chatu administratora
 adminchat-format: '&8[&4@&8] &7{PLAYER}: &c{MESSAGE}'
+# Czas pomiedzy mozliwoscia pisania w sekundach
+slowdown: 5
 
 # [------------------------------]
 # [           Helpop
@@ -88,14 +86,25 @@ tp-delay: 10
 # [------------------------------]
 # Czy ma siê pokazywaæ motd
 motd-show: true
+# Pierwsza wiadomosc o wejsciu gracza
+first-message: '&7Witamy gracza &c{PLAYER} &7po raz pierwszy na serwerze!'
 # Treœæ motd
 motd:
  - '&8&m-------------------------------------'
  - '&7  Witaj &c{PLAYER}&7!'
  - '&7    Serwer uzywa &cqEssentials &7by &cxVacuum'
  - '&8&m-------------------------------------'
-# Czy ma dawaæ startowe przedmioty (póki co brak mo¿liwoœci zmiany itemów)
+# Czy ma dawaæ startowe przedmioty 
 start-items: true
+# Startowe itemy
+# Nazwa z bukkit'a, po malpie ilosc
+
+items:
+  - 'STONE_PICKAXE@1'
+  - 'COOKED_BEEF@128'
+  - 'ENDER_CHEST@1'
+  - 'BOAT@2'
+
   
 # [------------------------------]
 # [            AutoMessage
@@ -107,11 +116,16 @@ automessages:
   - '&8[&cqEssentials&8] &7Dziekuje za uzywanie pluginu! :D'
   - '&8[&cqEssentials&8] &7Wbijaj na &cMPC &7i ocen plugin!'
   - '&8[&cqEssentials&8] &7Masz propozycje? Wbijaj na &cgithub/xVacuum/qEssentials&7!'
+  - '&8[&cqEssentials&8] &7Przykladowa losowa wiadomosc!'
+  - '&8[&cqEssentials&8] &7Druga przykladowa wiadomosc!'
   
   
 # [------------------------------]
 # [          ClearItems
 # [------------------------------]
+# Czy ta funkcja ma byæ w³¹czona
+clear-enabled: true
+
 # Swiat który ma byæ wyczyszczony
 clear-world: 'world'
 
@@ -126,11 +140,42 @@ clear-delay-1: 30
 
 # Co ile sekund ma byæ wykonywane czyszczenie itemów
 clear-delay-2: 700
-  
-  
-  
-  
-  
-  
+
+# [------------------------------]
+# [          Kits
+# [------------------------------]
+kits:
+  start:
+    delay: 60
+    items:
+      - STONE_PICKAXE@1
+      - ENDER_CHEST@1
+      - COOKED_BEEF@128
+      - BOAT@2
+  vip:
+    delay: 120
+    items:
+      - DIAMOND_PICKAXE@1
+      - ENDER_CHEST@1
+      - COOKED_BEEF@256
+      - BOAT@3
+
+# [------------------------------]
+# [            MySQL
+# [------------------------------]
+# Typ zapisu plików
+# flat = zapis do plików serwera 
+# mysql = zapis do bazy danych (zalecane)
+type: flat
+# Dane mysql
+mysql:
+  host: localhost
+  user: root
+  password: ''
+  database: qess
+  port: 3306
+
+
+
 
 

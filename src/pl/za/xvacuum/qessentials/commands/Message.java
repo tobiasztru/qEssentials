@@ -15,7 +15,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class Message extends QCommand{
 
 	public Message() {
-		super("msg", "Komunikacja miedzy graczami", "/msg <player> <text>", "msg", Arrays.asList(new String[] { "qmsg", "message", "m", "qm", "tell", "t", "echo" }));
+		super("msg", "Komunikacja miedzy graczami", "/msg <player> <text>", "msg", Arrays.asList(new String[] { "qmsg", "message", "m", "qm", "tell", "t", "whisper", "w" }), true);
 		
 	}
 	private static final HashMap<Player, Player> lastPlayer = new HashMap<Player, Player>();

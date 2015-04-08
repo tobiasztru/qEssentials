@@ -48,4 +48,16 @@ public class LogUtil {
 		}
 	}
  
+	public static String parseArgs(int start, String[] args) {
+		StringBuffer buffer = new StringBuffer();
+		for(int i = start; i<args.length; i++) {
+			buffer.append(' ').append(args[i]);
+		}
+		String t = buffer.toString();
+		if(t.charAt(0) == ' ') {
+			t = t.substring(1, t.length());
+		}
+	    return t;
+	}
+	
 }

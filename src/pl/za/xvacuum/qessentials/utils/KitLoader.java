@@ -1,14 +1,9 @@
 package pl.za.xvacuum.qessentials.utils;
 
-public class KitLoader {
-	
-}
-/**
-
-
 import java.util.List;
 
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.Player;
 
 import pl.za.xvacuum.qessentials.Main;
 
@@ -30,8 +25,17 @@ public class KitLoader {
 			kit.setDelay(delay);
 			kit.setItems(items);
 		}
-		kit.getKits().add(kit);
+		KitUtil.getKits().add(kit);
+	}
+	
+	public static void getSections(Player p)
+	{
+		String msg = "";
+		for(String s : Main.getInstance().getConfig().getConfigurationSection("kits").getKeys(false)){
+			msg += ", " + s;
+		}
+		Util.sendMessage(p, "&7Dostepne zestawy: &c" + msg.replaceFirst(", ", ""));
 	}
 
 }
-*/
+

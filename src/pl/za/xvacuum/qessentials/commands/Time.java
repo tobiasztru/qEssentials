@@ -16,7 +16,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class Time extends QCommand{
 
 	public Time() {
-		super("time", "Manipulacja czasem", "/time <day/night>", "time", Arrays.asList(new String[] { "qtime", "qt", "czas", "qczas" }));
+		super("time", "Manipulacja czasem", "/time <day/night>", "time", Arrays.asList(new String[] { "qtime", "qt", "czas", "qczas" }), true);
 		
 	}
 

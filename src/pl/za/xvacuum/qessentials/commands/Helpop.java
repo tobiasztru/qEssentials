@@ -17,7 +17,7 @@ public class Helpop extends QCommand{
 	private Map<CommandSender, Long> time = new WeakHashMap<CommandSender, Long>();
 	
 	public Helpop() {
-		super("helpop", "Szybki kontakt z administratorem", "/helpop [tekst]", "helpop", Arrays.asList(new String[] { }));
+		super("helpop", "Szybki kontakt z administratorem", "/helpop [tekst]", "helpop", Arrays.asList(new String[] { }), true);
 	}
 
 	@SuppressWarnings("deprecation")

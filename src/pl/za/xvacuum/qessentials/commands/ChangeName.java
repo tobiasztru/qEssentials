@@ -18,7 +18,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class ChangeName extends QCommand{
 
 	public ChangeName() {
-		super("changename", "Zmiana nazwy przedmiotu", "/changename <tekst>", "changename", Arrays.asList(new String[] { "qchangename", "qcn", "cn", "setname", "sn", "qsetname", "qsn"}));
+		super("changename", "Zmiana nazwy przedmiotu", "/changename <tekst>", "changename", Arrays.asList(new String[] { "qchangename", "qcn", "cn", "setname", "sn", "qsetname", "qsn"}), true);
 
 	}
 

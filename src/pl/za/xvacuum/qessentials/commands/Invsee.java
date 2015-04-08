@@ -12,7 +12,7 @@ import pl.za.xvacuum.qessentials.utils.Util;
 public class Invsee extends QCommand {
 
 	public Invsee() {
-		super("invsee", "Otwiera ekwipunek gracza", "/invsee <player>", "invsee", Arrays.asList(new String[] { "invs", "is", "qinvsee", "qinvs", "qis"} ));
+		super("invsee", "Otwiera ekwipunek gracza", "/invsee <player>", "invsee", Arrays.asList(new String[] { "invs", "is", "qinvsee", "qinvs", "qis"} ), true);
 		
 	}
 

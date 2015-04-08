@@ -9,7 +9,7 @@ import pl.za.xvacuum.qessentials.utils.Util;
 public class SignChange implements Listener{
 	
 	@EventHandler
-	public void onchangesign(SignChangeEvent e){
+	public void onChangeSign(SignChangeEvent e){
 		if(e.getPlayer().hasPermission("qessentials.sign.color")){
 			for (int i = 0; i <= 3; i++){
 				e.setLine(i, Util.setHEX(e.getLine(i)));

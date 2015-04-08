@@ -12,7 +12,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class Reply extends QCommand{
 
 	public Reply() {
-		super("reply", "Odpowiedz na wiadomosc", "/reply <text>", "reply", Arrays.asList(new String[] { "r", "rtell", "qr", "qreply" }));
+		super("reply", "Odpowiedz na wiadomosc", "/reply <text>", "reply", Arrays.asList(new String[] { "r", "rtell", "qr", "qreply" }), true);
 		
 	}
 

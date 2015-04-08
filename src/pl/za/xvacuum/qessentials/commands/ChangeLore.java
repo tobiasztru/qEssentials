@@ -16,7 +16,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class ChangeLore extends QCommand{
 
 	public ChangeLore() {
-		super("changelore", "Zmienia opis przedmiotu", "/changelore <lore>", "changelore", Arrays.asList(new String[] { "qchangelore", "qcl", "cl", "setlore", "sl", "qsetlore", "qsl"}));
+		super("changelore", "Zmienia opis przedmiotu", "/changelore <lore>", "changelore", Arrays.asList(new String[] { "qchangelore", "qcl", "cl", "setlore", "sl", "qsetlore", "qsl"}), true);
 		
 	}
 

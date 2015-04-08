@@ -14,7 +14,7 @@ import pl.za.xvacuum.qessentials.utils.Util;
 public class World extends QCommand{
 
 	public World() {
-		super("world", "Teleportacja miedzy swiatami", "/world <world>", "world", Arrays.asList(new String[] { "w", "qw", "qworld", "swiat", "qswiat" }));
+		super("world", "Teleportacja miedzy swiatami", "/world <world>", "world", Arrays.asList(new String[] { "w", "qw", "qworld", "swiat", "qswiat" }), true);
 		
 	}
 

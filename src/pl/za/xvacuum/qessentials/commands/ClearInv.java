@@ -11,7 +11,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class ClearInv extends QCommand{
 
 	public ClearInv() {
-		super("clear", "Wyczyszczenie ekwipunku", "/clear", "clear", Arrays.asList(new String[] { "clearinventory", "ci", "c", "qclearinventory", "qci", "qc" }));
+		super("clear", "Wyczyszczenie ekwipunku", "/clear", "clear", Arrays.asList(new String[] { "clearinventory", "ci", "c", "qclearinventory", "qci", "qc" }), true);
 	}
 
 	@Override

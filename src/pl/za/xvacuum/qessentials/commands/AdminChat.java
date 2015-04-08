@@ -14,7 +14,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class AdminChat extends QCommand{
 
 	public AdminChat() {
-		super("adminchat", "Chat administratorow", "/adminchat [tekst]", "adminchat", Arrays.asList(new String[] { "qadminchat", "qac", "ac", "adminc", "achat"}));
+		super("adminchat", "Chat administratorow", "/adminchat [tekst]", "adminchat", Arrays.asList(new String[] { "qadminchat", "qac", "ac", "a", "adminc", "achat"}), false);
 		
 	}
 
@@ -27,7 +27,6 @@ public class AdminChat extends QCommand{
 
 	        message = message.replace("{PLAYER}", sender.getName());
 	        
-
 	        StringBuilder msg = new StringBuilder();
 	        msg.append(args[0]);
 	        for (int i = 1; i < args.length; i++) {
@@ -47,7 +46,7 @@ public class AdminChat extends QCommand{
 
 
 	    }else{
-	    	Util.sendMessage((Player)sender, "&cPoprawne uzycie: /adminchat <tekst>");
+	    	Util.sendMessage(sender, "&cPoprawne uzycie: /adminchat <tekst>");
 	    }
 	}
 

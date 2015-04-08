@@ -2,7 +2,6 @@ package pl.za.xvacuum.qessentials.api;
 
 import java.util.HashMap;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -21,9 +20,9 @@ public class QEssentialsAPI
 		return ChatUtil.getChat();
 	}
 	
-	public static void setChatStatus(String mode)
+	public static boolean setChatStatus(boolean mode)
 	{
-		ChatUtil.setChat(mode);
+		return ChatUtil.setChat(mode);
 	}
 	
 	public static String getServerMotd()
@@ -31,19 +30,14 @@ public class QEssentialsAPI
 		return Main.getInstance().getConfig().getString("server-motd");
 	}
 	
-	public static void executeCommand(Player player, String command)
+	public static String setHEX(String text)
 	{
-		Bukkit.dispatchCommand(player, command);
+		return Util.setHEX(text);
 	}
 	
-	public static void setHEX(String text)
+	public static boolean isInteger(String text)
 	{
-		Util.setHEX(text);
-	}
-	
-	public static void isInteger(String text)
-	{
-		Util.isInteger(text);
+		return Util.isInteger(text);
 	}
 	
 	public static int getRandomInt(int min, int max)

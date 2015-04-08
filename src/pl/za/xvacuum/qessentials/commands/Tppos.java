@@ -14,7 +14,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class Tppos extends QCommand{
 
 	public Tppos() {
-		super("tppos", "Teleportacja w okreslone koordynaty", "/tppos [player] <x> <y> <z>", "tppos", Arrays.asList(new String[] { "qtppos", "tpp", "qtpp", "tpposition" }));
+		super("tppos", "Teleportacja w okreslone koordynaty", "/tppos [player] <x> <y> <z>", "tppos", Arrays.asList(new String[] { "qtppos", "tpp", "qtpp", "tpposition" }), false);
 		
 	}
 
@@ -26,10 +26,9 @@ public class Tppos extends QCommand{
 		}
 	    if (args.length == 4) {
 	        Player p = Bukkit.getPlayerExact(args[0]);
-	        Player player = (Player)sender;
 	        if (p == null) 
 	        { 
-	        	Util.sendMessage(player, "&cTaki gracz nie jest online!");
+	        	Util.sendMessage(sender, "&cTaki gracz nie jest online!");
 	            return; 
 	        } 
 	        int x = 0;
@@ -40,7 +39,7 @@ public class Tppos extends QCommand{
 	            y = Integer.parseInt(args[2]);
 	            z = Integer.parseInt(args[3]);
 	        }else{
-	             Util.sendMessage(player, "&cKoordynaty musza byc liczba!");
+	             Util.sendMessage(sender, "&cKoordynaty musza byc liczba!");
 	        }
 
 	        Location loc = p.getLocation();
@@ -49,30 +48,35 @@ public class Tppos extends QCommand{
 	        loc.setZ(z + 0.5D);
 
 	        p.teleport(loc, PlayerTeleportEvent.TeleportCause.COMMAND);
-	        Util.sendMessage(player, "&7Gracz &c" + p.getName() + "&7 zostal przeteleportowany!");
+	        Util.sendMessage(sender, "&7Gracz &c" + p.getName() + "&7 zostal przeteleportowany!");
 	        return;
 	    }if (args.length == 3) {
-	        Player p = (Player)sender;
-
-	        int x = 0; 
-	        int y = 0; 
-	        int z = 0;
-	        if(Util.isInteger(args[0]) || Util.isInteger(args[1]) || Util.isInteger(args[2])){
-	        	x = Integer.parseInt(args[0]);
-	            y = Integer.parseInt(args[1]);
-	            z = Integer.parseInt(args[2]);
-	        }else{
-	             Util.sendMessage(p, "&cKoordynaty musza byc liczba!");
-	        }
-
-	        Location loc = p.getLocation();
-	        loc.setX(x + 0.5D);
-	        loc.setY(y + 0.3D);
-	        loc.setZ(z + 0.5D);
-
-	        p.teleport(loc, PlayerTeleportEvent.TeleportCause.COMMAND);
-	        Util.sendMessage(p, "&7Zostales przeteleportowany!");
-	        return;
+	    	if(sender instanceof Player){
+		        Player p = (Player)sender;
+	
+		        int x = 0; 
+		        int y = 0; 
+		        int z = 0;
+		        if(Util.isInteger(args[0]) || Util.isInteger(args[1]) || Util.isInteger(args[2])){
+		        	x = Integer.parseInt(args[0]);
+		            y = Integer.parseInt(args[1]);
+		            z = Integer.parseInt(args[2]);
+		        }else{
+		             Util.sendMessage(p, "&cKoordynaty musza byc liczba!");
+		        }
+	
+		        Location loc = p.getLocation();
+		        loc.setX(x + 0.5D);
+		        loc.setY(y + 0.3D);
+		        loc.setZ(z + 0.5D);
+	
+		        p.teleport(loc, PlayerTeleportEvent.TeleportCause.COMMAND);
+		        Util.sendMessage(p, "&7Zostales przeteleportowany!");
+		        return;
+	    	}else{
+	    		Util.sendMessage(sender, "&cMozesz teleportowac jedynie innych graczy z poziomu konsoli!");
+	    		return;
+	    	}
 	     }
 	     
 	}

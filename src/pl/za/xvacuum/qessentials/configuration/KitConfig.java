@@ -1,9 +1,4 @@
-package pl.za.xvacuum.qessentials.configuration;
 
-public class KitConfig {
-	
-}
-/**
 package pl.za.xvacuum.qessentials.configuration;
 
 import java.io.File;
@@ -35,4 +30,4 @@ public class KitConfig {
 	
 
 }
-*/
+

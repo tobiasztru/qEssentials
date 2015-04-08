@@ -1,30 +1,27 @@
 package pl.za.xvacuum.qessentials.utils;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class ChatUtil {
 	
 	public static boolean chat;
 	
-	public static void setChat(String mode){
-		if (mode == "off")
-		{
-			chat = false;
-		}
-		else if(mode == "on")
-		{
-			chat = true;
-		}
+	public static boolean setChat(boolean mode){
+		chat = mode;
+		return mode;
 	}
+	
 	
 	public static boolean getChat()
 	{
 		return chat;
 	}
 	
+	@SuppressWarnings("deprecation")
 	public static void clearChat()
 	{
-		for (Player p : PlayerManager.getOnlinePlayers()){
+		for (Player p : Bukkit.getOnlinePlayers()){
 		    for (int i = 0; i < 100; i++){
 		        p.sendMessage(" ");
 		    }

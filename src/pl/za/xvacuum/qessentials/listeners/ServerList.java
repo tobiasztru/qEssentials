@@ -13,7 +13,7 @@ public class ServerList implements Listener{
 	
 	
 	@EventHandler(priority = EventPriority.NORMAL)
-	public void serverlist(ServerListPingEvent e){
+	public void serverList(ServerListPingEvent e){
 		e.setMotd(Util.setHEX(Main.getInstance().getConfig().getString("server-motd")));
 		int slots = Main.getInstance().getConfig().getInt("server-slots");
 		if (slots <= 0) {

@@ -16,19 +16,19 @@ public class UnknownCommand implements Listener{
 	
 	public static FileConfiguration cfg = Main.getInstance().getConfig();
 	
+	
 	@EventHandler(priority=EventPriority.HIGHEST)
 	public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
 		Player p = event.getPlayer();
+		if(!Main.getInstance().getConfig().getBoolean("uc-enabled")){
+			return;
+		}
 		if ((!event.isCancelled())) {
 			String command = event.getMessage().split(" ")[0];
 			HelpTopic htopic = Bukkit.getServer().getHelpMap().getHelpTopic(command);
 			if (htopic == null) {
-				if(cfg.getBoolean("uc-oneline") == true){
-					Util.sendMessage(p, cfg.getString("uc-oneline-msg"));
-				}else if (cfg.getBoolean("uc-oneline") == false){
-					for (String s : cfg.getStringList("uc-multiline-msg")){
-						Util.sendMessage(p, s);
-					}
+				for (String s : cfg.getStringList("uc-msg")) {
+					Util.sendMessage(p, s);
 				}
 				event.setCancelled(true);
 				return;

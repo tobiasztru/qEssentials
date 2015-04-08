@@ -13,7 +13,7 @@ import pl.za.xvacuum.qessentials.utils.Util;
 public class Back extends QCommand{
 
 	public Back() {
-		super("back", "Teleportuje w ostatnie miejsce", "/back", "back", Arrays.asList(new String[] { "qback", "qb", "powrot" } ));
+		super("back", "Teleportuje w ostatnie miejsce", "/back", "back", Arrays.asList(new String[] { "qback", "qb", "powrot" } ), true);
 		
 	}
 
@@ -26,7 +26,6 @@ public class Back extends QCommand{
 			return;
 		}
 		TimeUtil.teleportDelay(p, BackUtil.getLastLocation(p));
-		
 	}
 
 }

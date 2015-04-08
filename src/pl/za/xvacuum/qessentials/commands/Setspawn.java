@@ -14,7 +14,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class Setspawn extends QCommand{
 
 	public Setspawn() {
-		super("setspawn", "Ustawianie spawnu", "/setspawn", "setspawn", Arrays.asList(new String[] { "setspwn", "qsetspawn", "ss" }));
+		super("setspawn", "Ustawianie spawnu", "/setspawn", "setspawn", Arrays.asList(new String[] { "setspwn", "qsetspawn", "ss" }), true);
 		
 	}
 

@@ -14,7 +14,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class Enchant extends QCommand{
 
 	public Enchant() {
-		super("enchant", "Enchantowanie przedmiotow", "/enchant <enchant> <level>", "enchant", Arrays.asList(new String[] { }));
+		super("enchant", "Enchantowanie przedmiotow", "/enchant <enchant> <level>", "enchant", Arrays.asList(new String[] { }), true);
 		
 	}
 	@Override

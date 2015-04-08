@@ -14,7 +14,7 @@ import pl.za.xvacuum.qessentials.utils.QCommand;
 public class Weather extends QCommand{
 
 	public Weather() {
-		super("weather", "Manipulacja pogoda", "/weather <sun/thunder>", "weather", Arrays.asList(new String[] { "qweather", "qw", "pogoda", "qpogoda" }));
+		super("weather", "Manipulacja pogoda", "/weather <sun/thunder>", "weather", Arrays.asList(new String[] { "qweather", "qw", "pogoda", "qpogoda" }), true);
 		
 	}
 
