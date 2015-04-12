@@ -29,8 +29,8 @@ public class Manager {
 			
 				while(rs.next()) {
 					QPlayer qp = new QPlayer(rs.getString(1));
-					qp.setFly(rs.getInt(7) == 1 ? true : false);
-					qp.setGod(rs.getInt(6) == 1 ? true : false);
+					qp.setFly(rs.getInt(7) == 1);
+					qp.setGod(rs.getInt(6) == 1);
 					int hX = rs.getInt(2);
 					int hY = rs.getInt(3);
 					int hZ = rs.getInt(4);
